@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>FH Aachen – Campus Hub</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #003b2f 0%, #005c44 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1.5rem 1rem;
+    }
+
+    .container {
+      max-width: 550px;
+      width: 100%;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+      color: white;
+    }
+
+    .logo {
+      background: white;
+      border-radius: 16px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.3rem;
+      color: #005c44;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .title h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .title p {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+
+    /* Kacheln-Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.13);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 1.2rem 0.9rem;
+      text-decoration: none;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    .card:active {
+      transform: scale(0.97);
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      background: rgba(255,255,255,0.15);
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-label {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: -0.2px;
+    }
+
+    .card-sub {
+      font-size: 0.75rem;
+      opacity: 0.7;
+      margin-top: -0.4rem;
+    }
+
+    /* Hauptbutton für HISinOne */
+    .hero-link {
+      display: block;
+      background: #f7b731;
+      color: #1a3b30;
+      text-align: center;
+      padding: 1rem 1.2rem;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      margin: 1.8rem 0 1.2rem;
+      box-shadow: 0 8px 20px rgba(247, 183, 49, 0.4);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .hero-link:hover {
+      background: #f8c95c;
+      box-shadow: 0 10px 26px rgba(247, 183, 49, 0.5);
+      transform: translateY(-2px);
+    }
+
+    /* Status-Leiste */
+    .status {
+      background: rgba(0,0,0,0.25);
+      border-radius: 20px;
+      padding: 0.8rem 1rem;
+      color: white;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      background: #5eea8b;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      box-shadow: 0 0 8px #5eea8b;
+    }
+
+    footer {
+      margin-top: 2rem;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Kopfzeile -->
+    <div class="header">
+      <div class="logo">FH</div>
+      <div class="title">
+        <h1>FH Aachen</h1>
+        <p>Campus Hub</p>
+      </div>
+    </div>
+
+    <!-- Direkter Link zum HISinOne-Portal -->
+    <a href="https://h1.fh-aachen.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces"
+       target="_blank"
+       rel="noopener"
+       class="hero-link">
+      <span>🔐</span> HISinOne Portal öffnen
+    </a>
+
+    <!-- Funktionskacheln -->
+    <div class="grid">
+      <!-- HISinOne Start -->
+      <a href="https://h1.fh-aachen.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces"
+         target="_blank" rel="noopener" class="card">
+        <div class="card-icon">🎓</div>
+        <div class="card-label">HISinOne</div>
+        <div class="card-sub">Noten, Rückmeldung, Bescheinigungen</div>
+      </a>
+
+      <!-- Moodle -->
+      <a href="https://moodle.fh-aachen.de/" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">📚</div>
+        <div class="card-label">Moodle</div>
+        <div class="card-sub">Kurse & Lernmaterialien</div>
+      </a>
+
+      <!-- Stundenplan -->
+      <a href="https://h1.fh-aachen.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces"
+         target="_blank" rel="noopener" class="card">
+        <div class="card-icon">📅</div>
+        <div class="card-label">Stundenplan</div>
+        <div class="card-sub">Vorlesungen & Räume</div>
+      </a>
+
+      <!-- Webmail -->
+      <a href="https://webmail.fh-aachen.de/" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">✉️</div>
+        <div class="card-label">Webmail</div>
+        <div class="card-sub">FH E-Mail Postfach</div>
+      </a>
+
+      <!-- Mensa -->
+      <a href="https://www.studierendenwerk-aachen.de/mensen/" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">🍽️</div>
+        <div class="card-label">Mensaplan</div>
+        <div class="card-sub">Speiseplan & Öffnungszeiten</div>
+      </a>
+
+      <!-- Bibliothek -->
+      <a href="https://www.fh-aachen.de/fh-aachen/bibliothek" target="_blank" rel="noopener" class="card">
+        <div class="card-icon">📖</div>
+        <div class="card-label">Bibliothek</div>
+        <div class="card-sub">Katalog, Ausleihe, Öffnungszeiten</div>
+      </a>
+    </div>
+
+    <!-- Statusinfo -->
+    <div class="status">
+      <span><span class="dot"></span> HISinOne erreichbar</span>
+      <span id="clock">--:--</span>
+    </div>
+
+    <footer>
+      Nicht-offizielle App | Nur Verknüpfungen zu FH-Diensten | Keine Datenspeicherung
+    </footer>
+  </div>
+
+  <script>
+    // Live-Uhr in der Statusleiste
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('clock').textContent =
+        now.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+    }
+    updateClock();
+    setInterval(updateClock, 10000);
+
+    // Erinnerung: HISinOne funktioniert nur mit gültigem Login
+    console.log('FH Aachen Campus Hub geladen – direkter Zugriff auf HISinOne & Co.');
+  </script>
+</body>
+</html>
